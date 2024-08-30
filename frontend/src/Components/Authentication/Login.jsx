@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useState } from "react";
 import { Button } from "@chakra-ui/button";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
 import { VStack } from "@chakra-ui/layout";
-import { useToast } from "@chakra-ui/react";
+// import { useToast } from "@chakra-ui/react";
 
 export const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(false);
+  
+
+  function handleClick() {
+    setShow(!show);
+  }
+  function submitHandler() {}
+
   return (
     <VStack spacing="10px">
       <FormControl id="email" isRequired>
@@ -54,5 +65,5 @@ export const Login = () => {
         Get Guest User Credentials
       </Button>
     </VStack>
-  )
-}
+  );
+};
